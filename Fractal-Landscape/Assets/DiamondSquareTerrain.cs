@@ -8,6 +8,8 @@ public class DiamondSquareTerrain : MonoBehaviour
     public float mSize;
     public float mHeight;
 
+    private float height;
+
     Vector3[] mVerts;
     int mVertCount;
     // Start is called before the first frame update
@@ -19,10 +21,13 @@ public class DiamondSquareTerrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.Space)) {
+            CreateTerrain();
+        }
     }
 
     void CreateTerrain() {
+        height = mHeight;
         mVertCount = (mDivisions + 1) * (mDivisions + 1);
         mVerts = new Vector3[mVertCount];
         Vector2[] uvs = new Vector2[mVertCount];
@@ -57,10 +62,10 @@ public class DiamondSquareTerrain : MonoBehaviour
             }
         }
 
-        mVerts[0].y = Random.Range(-mHeight, mHeight);
-        mVerts[mDivisions].y = Random.Range(-mHeight, mHeight);
-        mVerts[mVerts.Length - 1].y = Random.Range(-mHeight, mHeight);
-        mVerts[mVerts.Length - 1 - mDivisions].y = Random.Range(-mHeight, mHeight);
+        mVerts[0].y = Random.Range(-height, height);
+        mVerts[mDivisions].y = Random.Range(-height, height);
+        mVerts[mVerts.Length - 1].y = Random.Range(-height, height);
+        mVerts[mVerts.Length - 1 - mDivisions].y = Random.Range(-height, height);
 
         int iterations = (int)Mathf.Log(mDivisions, 2);
         int numSquares = 1;
@@ -71,14 +76,14 @@ public class DiamondSquareTerrain : MonoBehaviour
             for (int j = 0; j < numSquares; j++) {
                 int col = 0;
                 for (int k = 0; k < numSquares; k++) {
-                    DiamondSquare(row, col, squareSize, mHeight);
+                    DiamondSquare(row, col, squareSize, height);
                     col += squareSize;
                 }
                 row += squareSize;
             }
             numSquares *= 2;
             squareSize /= 2;
-            mHeight *= 0.5f;
+            height *= 0.5f;
         }
 
         mesh.vertices = mVerts;

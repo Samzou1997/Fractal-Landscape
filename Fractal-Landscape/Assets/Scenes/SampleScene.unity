@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477f7e8f7bb562d459169237f324011d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mDivisions: 128
-  mSize: 30
-  mHeight: 5
+  mDivisions: 256
+  mSize: 100
+  mHeight: 20
 --- !u!23 &54102545
 MeshRenderer:
   m_ObjectHideFlags: 0
