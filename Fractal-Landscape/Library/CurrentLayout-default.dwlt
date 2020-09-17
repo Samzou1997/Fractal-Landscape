@@ -22,7 +22,11 @@ MonoBehaviour:
   m_Title: 
   m_RootView: {fileID: 6}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_MinSize: {x: 875, y: 300}
+=======
+  m_MinSize: {x: 875, y: 542}
+>>>>>>> Stashed changes
 =======
   m_MinSize: {x: 875, y: 542}
 >>>>>>> Stashed changes
@@ -61,6 +65,9 @@ MonoBehaviour:
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
   controlID: 55
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!114 &3
 MonoBehaviour:
@@ -139,6 +146,9 @@ MonoBehaviour:
     y: 606
     width: 1466
     height: 351
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
@@ -248,6 +258,9 @@ MonoBehaviour:
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
   controlID: 96
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 --- !u!114 &10
 MonoBehaviour:
@@ -274,7 +287,11 @@ MonoBehaviour:
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 101
+=======
+  controlID: 97
+>>>>>>> Stashed changes
 =======
   controlID: 97
 >>>>>>> Stashed changes
@@ -414,9 +431,15 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_SelectedIDs: e0330000
     m_LastClickedID: 13280
     m_ExpandedIDs: 00000000e033000000ca9a3b
+=======
+    m_SelectedIDs: d2330000
+    m_LastClickedID: 13266
+    m_ExpandedIDs: 00000000d2330000d433000000ca9a3b
+>>>>>>> Stashed changes
 =======
     m_SelectedIDs: d2330000
     m_LastClickedID: 13266
@@ -450,7 +473,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_ExpandedIDs: 00000000e0330000
+=======
+    m_ExpandedIDs: 00000000d2330000d4330000
+>>>>>>> Stashed changes
 =======
     m_ExpandedIDs: 00000000d2330000d4330000
 >>>>>>> Stashed changes
@@ -579,7 +606,11 @@ MonoBehaviour:
       m_SelectedIDs: 
       m_LastClickedID: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       m_ExpandedIDs: 6afbffff
+=======
+      m_ExpandedIDs: befaffff
+>>>>>>> Stashed changes
 =======
       m_ExpandedIDs: befaffff
 >>>>>>> Stashed changes
@@ -697,7 +728,11 @@ MonoBehaviour:
     m_Target: 856.121
     speed: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_Value: 856.121
+=======
+    m_Value: 1750.0992
+>>>>>>> Stashed changes
 =======
     m_Value: 1750.0992
 >>>>>>> Stashed changes
