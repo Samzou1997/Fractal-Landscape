@@ -43,12 +43,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
     width: 1920
     height: 957
   m_MinSize: {x: 679, y: 342}
   m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
   controlID: 20
+=======
+    width: 2560
+    height: 1307
+  m_MinSize: {x: 678, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+  vertical: 0
+  controlID: 17
+>>>>>>> parent of b6748e4... update
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -66,11 +75,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1531
     y: 0
+<<<<<<< HEAD
     width: 389
     height: 957
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
+=======
+    width: 605
+    height: 1307
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 15}
+>>>>>>> parent of b6748e4... update
   m_Panes:
   - {fileID: 14}
   m_Selected: 0
@@ -219,7 +236,11 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 21
+=======
+  controlID: 18
+>>>>>>> parent of b6748e4... update
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +265,11 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 22
+=======
+  controlID: 19
+>>>>>>> parent of b6748e4... update
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -255,7 +280,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< HEAD
   m_Name: 
+=======
+  m_Name: GameView
+>>>>>>> parent of b6748e4... update
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -266,13 +295,24 @@ MonoBehaviour:
     height: 579
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+<<<<<<< HEAD
   m_ActualView: {fileID: 16}
+=======
+  m_ActualView: {fileID: 18}
+>>>>>>> parent of b6748e4... update
   m_Panes:
   - {fileID: 16}
   - {fileID: 17}
+<<<<<<< HEAD
   - {fileID: 12}
   m_Selected: 0
   m_LastSelected: 1
+=======
+  - {fileID: 18}
+  - {fileID: 13}
+  m_Selected: 1
+  m_LastSelected: 0
+>>>>>>> parent of b6748e4... update
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -349,9 +389,15 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: d4330000
     m_LastClickedID: 13268
     m_ExpandedIDs: 00000000d4330000d633000000ca9a3b
+=======
+    m_SelectedIDs: b8330000
+    m_LastClickedID: 13240
+    m_ExpandedIDs: 00000000b8330000c0330000c23300008a3900009839000000ca9a3b
+>>>>>>> parent of b6748e4... update
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -379,7 +425,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000d4330000d6330000
+=======
+    m_ExpandedIDs: 00000000b8330000
+>>>>>>> parent of b6748e4... update
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -502,9 +552,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: 96330000
       m_LastClickedID: 13206
       m_ExpandedIDs: b0faffff
+=======
+      m_SelectedIDs: 743d0000
+      m_LastClickedID: 15732
+      m_ExpandedIDs: ee9affffaea0ffffb2c4ffff36c5ffff50c5ffff6afbffff
+>>>>>>> parent of b6748e4... update
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: Sun
@@ -612,6 +668,7 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
     speed: 2
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
@@ -619,6 +676,15 @@ MonoBehaviour:
     m_Target: 35.773903
     speed: 2
     m_Value: 34.2334
+=======
+    m_Target: {x: 0.40130013, y: 0.4896856, z: -0.27102578, w: 0.7250707}
+    speed: 2
+    m_Value: {x: 0.40129688, y: 0.48968163, z: -0.27102357, w: 0.7250648}
+  m_Size:
+    m_Target: 298.78323
+    speed: 2
+    m_Value: 298.78323
+>>>>>>> parent of b6748e4... update
   m_Ortho:
     m_Target: 0
     speed: 2
