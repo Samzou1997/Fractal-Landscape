@@ -8,6 +8,9 @@ public class DiamondSquareTerrain : MonoBehaviour
     public float mSize;
     public float mHeight;
 
+    public Shader shader;
+    public Texture texture;
+
     private float height;
 
     Vector3[] mVerts;
@@ -31,6 +34,7 @@ public class DiamondSquareTerrain : MonoBehaviour
         mVertCount = (mDivisions + 1) * (mDivisions + 1);
         mVerts = new Vector3[mVertCount];
         Vector2[] uvs = new Vector2[mVertCount];
+        Color[] colors = new Color[mVertCount];
         int[] tris = new int[mDivisions * mDivisions * 6];
 
         float halfSize = mSize * 0.5f;
@@ -86,12 +90,43 @@ public class DiamondSquareTerrain : MonoBehaviour
             height *= 0.5f;
         }
 
+        for (int i = 0; i < mVertCount; i++) {
+            // height with larger than 18
+            // Snow
+            if (mVerts[i].y > 35) {
+                colors[i] = new Color32(255, 255, 255, 255);
+            }
+            // height with larger than 15 and lower than 18
+            // Rocks
+            if (mVerts[i].y > 20 & mVerts[i].y <= 35)
+            {
+                colors[i] = new Color32(105, 105, 105, 255);
+            }
+            // height with larger than 0 and lower than 15
+            // Forest
+            if (mVerts[i].y > 2 & mVerts[i].y <= 20)
+            {
+                colors[i] = new Color32(46, 139, 87, 255);
+            }
+            // height with lower than 0
+            // Beach
+            if (mVerts[i].y <= 2)
+            {
+                colors[i] = new Color32(244, 164, 96, 255);
+            }
+        }
+
         mesh.vertices = mVerts;
         mesh.uv = uvs;
+        mesh.colors = colors;
         mesh.triangles = tris;
 
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
+
+        MeshRenderer renderer = this.gameObject.GetComponent<MeshRenderer>();
+        renderer.material.shader = this.shader;
+        /*renderer.material.mainTexture = texture;*/
     }
 
     void DiamondSquare(int row, int col, int size, float offset) {

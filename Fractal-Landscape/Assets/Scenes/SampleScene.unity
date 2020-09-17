@@ -167,8 +167,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mDivisions: 128
-  mSize: 100
-  mHeight: 20
+  mSize: 200
+  mHeight: 40
+  shader: {fileID: 4800000, guid: 445abb45bea43bb4a99321c8d929c2f4, type: 3}
+  texture: {fileID: 2800000, guid: 17405fba9d20b47408239b3e82d60232, type: 3}
 --- !u!23 &54102545
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -187,7 +189,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -248,8 +250,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mDivisions: 128
-  mSize: 100
+  mSize: 200
   mHeight: 2
+  shader: {fileID: 4800000, guid: 618a5ff016599244e879cdca3e3db07b, type: 3}
+  texture: {fileID: 0}
 --- !u!4 &170030309
 Transform:
   m_ObjectHideFlags: 0
@@ -258,7 +262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170030307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -282,7 +286,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c6d38711520119c4e89ddf1ea6adc007, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -504,4 +508,4 @@ MonoBehaviour:
   freeLookSens: 2.5
   zoomSens: 10
   fastZoomSens: 50
-  mapLimit: {x: 40, y: 40}
+  mapLimit: {x: 100, y: 100}

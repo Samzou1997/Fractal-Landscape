@@ -11,6 +11,9 @@ public class DiamondSquareWater : MonoBehaviour
 
     private float height;
 
+    public Shader shader;
+    public Texture texture;
+
     Vector3[] mVerts;
     int mVertCount;
     // Start is called before the first frame update
@@ -34,6 +37,7 @@ public class DiamondSquareWater : MonoBehaviour
         mVertCount = (mDivisions + 1) * (mDivisions + 1);
         mVerts = new Vector3[mVertCount];
         Vector2[] uvs = new Vector2[mVertCount];
+        Color[] colors = new Color[mVertCount];
         int[] tris = new int[mDivisions * mDivisions * 6];
 
         float halfSize = mSize * 0.5f;
@@ -95,12 +99,22 @@ public class DiamondSquareWater : MonoBehaviour
             height *= 0.5f;
         }
 
+        for (int i = 0; i < mVertCount; i++)
+        {
+            colors[i] = Color.blue;
+        }
+
         mesh.vertices = mVerts;
         mesh.uv = uvs;
+        mesh.colors = colors;
         mesh.triangles = tris;
 
         mesh.RecalculateBounds();
         mesh.RecalculateNormals();
+
+        MeshRenderer renderer = this.gameObject.GetComponent<MeshRenderer>();
+        /*renderer.material.shader = this.shader;*/
+        /*renderer.material.mainTexture = texture;*/
     }
 
     void DiamondSquare(int row, int col, int size, float offset)
