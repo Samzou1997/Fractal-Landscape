@@ -14,6 +14,19 @@ public class FreeCamera : MonoBehaviour
     private float nRotY = 0.0f;
     public Vector2 mapLimit; 
 
+    public Vector3 reset(Vector3 point)
+    {
+        point.x = 1.0f;
+        point.y = 50.0f;
+        point.z = 1.0f;
+        return point;
+    }
+
+    // Start is called before the first frame update
+    void Start(){
+        transform.position = reset(transform.position);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +48,11 @@ public class FreeCamera : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             pos += (-transform.forward) * movementSpeed * Time.deltaTime;
+        }
+
+        // reset the camera postion when the terrian is re-generated
+        if (Input.GetKeyUp(KeyCode.Space)) {
+            pos = reset(pos);
         }
 
         if (looking)
