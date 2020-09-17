@@ -22,10 +22,10 @@ public class DiamondSquareWater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             CreateTerrain();
-        }*/
+        }
     }
 
     void CreateTerrain()
