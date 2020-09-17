@@ -19,22 +19,22 @@ public class FreeCamera : MonoBehaviour
     {
         var fastMode = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         var movementSpeed = fastMode ? this.fastSpeed : this.movementSpeed;
-
+        Vector3 pos = transform.position;
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position = transform.position + (-transform.right) * movementSpeed * Time.deltaTime;
+            pos += (-transform.right) * movementSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position = transform.position + (transform.right) * movementSpeed * Time.deltaTime;
+            pos += (transform.right) * movementSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position = transform.position + (transform.forward) * movementSpeed * Time.deltaTime;
+            pos += (transform.forward) * movementSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position = transform.position + (-transform.forward) * movementSpeed * Time.deltaTime;
+            pos += (-transform.forward) * movementSpeed * Time.deltaTime;
         }
 
         if (looking)
@@ -48,10 +48,10 @@ public class FreeCamera : MonoBehaviour
         if (axis != 0)
         {
             var zoomSensL = fastMode ? this.fastZoomSens : this.zoomSens;
-            transform.position = transform.position + transform.forward * axis * zoomSensL;
+            pos += transform.forward * axis * zoomSensL;
         }
 
-        Vector3 pos = transform.position;
+        
         pos.x = Mathf.Clamp(pos.x, -mapLimit.x, mapLimit.x);
         pos.z = Mathf.Clamp(pos.z, -mapLimit.y, mapLimit.y);
         transform.position = pos;
