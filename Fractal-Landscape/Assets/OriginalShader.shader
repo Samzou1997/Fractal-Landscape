@@ -18,7 +18,6 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 		// Pragmas
 		#pragma vertex vert
 		#pragma fragment frag
-		#include "UnityCG.cginc" // for UnityObjectToWorldNormal
 
 		// User Defined Variables
 		uniform float4 _Color;
@@ -40,11 +39,10 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 			float4 color : COLOR;
 		};
 		struct vertexOutput {
-			fixed4 diff : COLOR0;
 			float4 pos : SV_POSITION;
 			float4 posWorld : TEXCOORD0;
 			float3 normalDir : TEXCOORD1;
-			//float4 color : COLOR;
+			float4 color : COLOR;
 		};
 
 		// Vertex Function
@@ -55,14 +53,7 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 			o.normalDir = normalize(mul(float4(v.normal, 0.0), unity_WorldToObject).xyz);;
 
 			o.pos = UnityObjectToClipPos(v.vertex);
-			//o.color = v.color;
-
-			half3 worldNormal = UnityObjectToWorldNormal(v.normal);
-			// dot product between normal and light direction for
-			// standard diffuse (Lambert) lighting
-			half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
-			// factor in the light color
-			o.diff = v.color * nl * _LightColor0;
+			o.color = v.color;
 			return o;
 
 		}
@@ -85,7 +76,7 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 
 			float3 lightFinal = rimLighting + diffuseReflection + specularReflection + UNITY_LIGHTMODEL_AMBIENT.xyz;
 
-			return float4(lightFinal * i.diff, 1.0);
+			return float4(lightFinal * i.color, 1.0);
 		}
 
 		ENDCG
@@ -98,7 +89,6 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 			// Pragmas
 			#pragma vertex vert
 			#pragma fragment frag
-			#include "UnityCG.cginc" // for UnityObjectToWorldNormal
 
 			// User Defined Variables
 			uniform float4 _Color;
@@ -120,11 +110,10 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 				float4 color : COLOR;
 			};
 			struct vertexOutput {
-				fixed4 diff : COLOR0;
 				float4 pos : SV_POSITION;
 				float4 posWorld : TEXCOORD0;
 				float3 normalDir : TEXCOORD1;
-				//float4 color : COLOR;
+				float4 color : COLOR;
 			};
 
 			// Vertex Function
@@ -135,14 +124,7 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 				o.normalDir = normalize(mul(float4(v.normal, 0.0), unity_WorldToObject).xyz);;
 
 				o.pos = UnityObjectToClipPos(v.vertex);
-				//o.color = v.color;
-
-				half3 worldNormal = UnityObjectToWorldNormal(v.normal);
-				// dot product between normal and light direction for
-				// standard diffuse (Lambert) lighting
-				half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
-				// factor in the light color
-				o.diff = v.color * nl * _LightColor0;
+				o.color = v.color;
 				return o;
 
 			}
@@ -165,7 +147,7 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 
 				float3 lightFinal = rimLighting + diffuseReflection + specularReflection;
 
-				return float4(lightFinal * i.diff, 1.0);
+				return float4(lightFinal * i.color, 1.0);
 			}
 
 			ENDCG
