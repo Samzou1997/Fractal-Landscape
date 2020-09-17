@@ -12,6 +12,7 @@ public class FreeCamera : MonoBehaviour
     private bool looking = false;
     private float nRotX = 0.0f;
     private float nRotY = 0.0f;
+    public Vector2 mapLimit; 
 
     // Update is called once per frame
     void Update()
@@ -49,19 +50,15 @@ public class FreeCamera : MonoBehaviour
             var zoomSensL = fastMode ? this.fastZoomSens : this.zoomSens;
             transform.position = transform.position + transform.forward * axis * zoomSensL;
         }
-        /*
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            ///StartLooking();
-        }
-        else if (Input.GetKeyUp(KeyCode.Mouse1))
-        {
-            StartLooking();
-        }
-        */
-        StartLooking();
+
+        Vector3 pos = transform.position;
+        pos.x = Mathf.Clamp(pos.x, -mapLimit.x, mapLimit.x);
+        pos.z = Mathf.Clamp(pos.z, -mapLimit.y, mapLimit.y);
+        transform.position = pos;
         
+        StartLooking();
     }
+    
     public void StartLooking()
     {
         looking = true;

@@ -504,3 +504,4 @@ MonoBehaviour:
   freeLookSens: 2.5
   zoomSens: 10
   fastZoomSens: 50
+  mapLimit: {x: 40, y: 40}
