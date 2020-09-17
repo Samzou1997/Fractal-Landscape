@@ -10,6 +10,8 @@ public class FreeCamera : MonoBehaviour
     public float zoomSens = 10f;
     public float fastZoomSens = 50f;
     private bool looking = false;
+    private float nRotX = 0.0f;
+    private float nRotY = 0.0f;
 
     // Update is called once per frame
     void Update()
@@ -36,8 +38,8 @@ public class FreeCamera : MonoBehaviour
 
         if (looking)
         {
-            float nRotX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * freeLookSens;
-            float nRotY = transform.localEulerAngles.x + Input.GetAxis("Mouse Y") * freeLookSens;
+            nRotX += Input.GetAxis("Mouse X") * freeLookSens;
+            nRotY -= Input.GetAxis("Mouse Y") * freeLookSens;
             transform.localEulerAngles = new Vector3(nRotY, nRotX, 0f);
         }
 
