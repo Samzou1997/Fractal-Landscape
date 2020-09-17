@@ -30,6 +30,7 @@
             {
                 fixed4 diff : COLOR0; // diffuse lighting color
                 float4 vertex : SV_POSITION;
+                //float4 color : COLOR;
             };
 
             v2f vert(appdata_full i)
@@ -43,6 +44,7 @@
                 half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
                 // factor in the light color
                 o.diff = i.color * nl * _LightColor0;
+                //o.color = i.color;
                 return o;
             }
 
