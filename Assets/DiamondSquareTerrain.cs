@@ -127,6 +127,9 @@ public class DiamondSquareTerrain : MonoBehaviour
         MeshRenderer renderer = this.gameObject.GetComponent<MeshRenderer>();
         renderer.material.shader = this.shader;
         /*renderer.material.mainTexture = texture;*/
+
+        MeshCollider collider = this.gameObject.GetComponent<MeshCollider>();
+        collider.sharedMesh = mesh;
     }
 
     void DiamondSquare(int row, int col, int size, float offset) {

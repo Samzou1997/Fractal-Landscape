@@ -16,9 +16,9 @@ public class FreeCamera : MonoBehaviour
 
     public Vector3 reset(Vector3 point)
     {
-        point.x = 1.0f;
-        point.y = 50.0f;
-        point.z = 1.0f;
+        point.x = 0.0f;
+        point.y = 80.0f;
+        point.z = 0.0f;
         return point;
     }
 
@@ -72,6 +72,7 @@ public class FreeCamera : MonoBehaviour
         
         pos.x = Mathf.Clamp(pos.x, -mapLimit.x, mapLimit.x);
         pos.z = Mathf.Clamp(pos.z, -mapLimit.y, mapLimit.y);
+        pos.y = Mathf.Clamp(pos.y, 0, mapLimit.y * 2);
         transform.position = pos;
         
         StartLooking();
@@ -92,5 +93,23 @@ public class FreeCamera : MonoBehaviour
     void OnDisable()
     {
         StopLooking();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collsion Begin");
+        print(collision.collider.gameObject.name);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        Debug.Log("In Collsion");
+        print(collision.collider.gameObject.name);
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        Debug.Log("Collsion Finished");
+        print(collision.collider.gameObject.name);
     }
 }
