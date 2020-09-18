@@ -66,10 +66,10 @@ public class DiamondSquareTerrain : MonoBehaviour
             }
         }
 
-        mVerts[0].y = Random.Range(-height, height);
-        mVerts[mDivisions].y = Random.Range(-height, height);
-        mVerts[mVerts.Length - 1].y = Random.Range(-height, height);
-        mVerts[mVerts.Length - 1 - mDivisions].y = Random.Range(-height, height);
+        mVerts[0].y = Random.Range((float)(-height * 0.5), height);
+        mVerts[mDivisions].y = Random.Range((float)(-height * 0.5), height);
+        mVerts[mVerts.Length - 1].y = Random.Range((float)(-height * 0.5), height);
+        mVerts[mVerts.Length - 1 - mDivisions].y = Random.Range((float)(-height * 0.8), height);
 
         int iterations = (int)Mathf.Log(mDivisions, 2);
         int numSquares = 1;
@@ -93,20 +93,20 @@ public class DiamondSquareTerrain : MonoBehaviour
         for (int i = 0; i < mVertCount; i++) {
             // height with larger than 18
             // Snow
-            if (mVerts[i].y > 35) {
+            if (mVerts[i].y > 36) {
                 colors[i] = new Color32(255, 255, 255, 255);
             }
             // height with larger than 15 and lower than 18
             // Rocks
-            if (mVerts[i].y > 20 & mVerts[i].y <= 35)
+            if (mVerts[i].y > 22 & mVerts[i].y <= 36)
             {
                 colors[i] = new Color32(105, 105, 105, 255);
             }
             // height with larger than 0 and lower than 15
             // Forest
-            if (mVerts[i].y > 2 & mVerts[i].y <= 20)
+            if (mVerts[i].y > 2 & mVerts[i].y <= 22)
             {
-                colors[i] = new Color32(46, 139, 87, 255);
+                colors[i] = new Color32(85, 107, 47, 255);
             }
             // height with lower than 0
             // Beach

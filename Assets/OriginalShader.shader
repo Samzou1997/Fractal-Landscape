@@ -74,7 +74,7 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 			float3 rim = pow(1.0 - saturate(dot(viewDirection, normalDirection)), _RimPower);
 			float3 rimLighting = atten * _LightColor0.rgb * saturate(dot(normalDirection, lightDirection)) * rim * _RimColor.rgb;
 
-			float3 lightFinal = rimLighting + diffuseReflection + specularReflection + UNITY_LIGHTMODEL_AMBIENT.xyz;
+			float3 lightFinal = rimLighting + diffuseReflection + UNITY_LIGHTMODEL_AMBIENT.xyz;
 
 			return float4(lightFinal * i.color, 1.0);
 		}
@@ -145,7 +145,7 @@ Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
 				float3 rim = pow(1.0 - saturate(dot(viewDirection, normalDirection)), _RimPower);
 				float3 rimLighting = atten * _LightColor0.rgb * saturate(dot(normalDirection, lightDirection)) * rim * _RimColor.rgb;
 
-				float3 lightFinal = rimLighting + diffuseReflection + specularReflection;
+				float3 lightFinal = rimLighting + diffuseReflection;
 
 				return float4(lightFinal * i.color, 1.0);
 			}
