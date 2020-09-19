@@ -200,9 +200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20627a3d41dbd3d47b1aef2eba9c5923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mDivisions: 256
+  mDivisions: 128
   mSize: 500
-  mHeight: 120
+  mHeight: 100
   shader: {fileID: 0}
   texture: {fileID: 0}
 --- !u!4 &48816041
@@ -438,8 +438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4623dff8522ef4c4f813fc5009090aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 12
-  fastSpeed: 60
+  movementSpeed: 50
+  fastSpeed: 120
   freeLookSens: 2.5
   zoomSens: 10
   fastZoomSens: 50
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c0b37a083d1864fb7ebae7589344a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mDivisions: 128
+  mDivisions: 64
   mSize: 500
   octaves:
   - speed: {x: 1, y: 1}

@@ -6,8 +6,8 @@ using UnityEngine;
 public class WaterSurface : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int mDivisions;
-    public float mSize;
+    public int mDivisions = 64;
+    public float mSize = 500;
     public Octave[] octaves;
 
     Vector3[] mVerts;

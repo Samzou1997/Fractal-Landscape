@@ -9,22 +9,32 @@ public class FreeCamera : MonoBehaviour
     public float freeLookSens = 2.5f;
     public float zoomSens = 10f;
     public float fastZoomSens = 50f;
+    public Vector2 mapLimit; 
+
     private bool looking = false;
     private float nRotX = 0.0f;
     private float nRotY = 0.0f;
-    public Vector2 mapLimit; 
-
-    public Vector3 reset(Vector3 point)
+    
+    public Vector3 Reset(Vector3 point)
     {
-        point.x = 0.0f;
-        point.y = 150.0f;
-        point.z = 0.0f;
+        point.x = mapLimit.x * -0.8f;
+        point.y = mapLimit.x;
+        point.z = mapLimit.y * -0.8f;
+
+        ResetRotation();
         return point;
+    }
+
+    void ResetRotation() 
+    {
+        //transform.localEulerAngles = new Vector3(45.0f, 0f, 0f);
+        nRotX = 45.0f;
+        nRotY = 35.0f;
     }
 
     // Start is called before the first frame update
     void Start(){
-        transform.position = reset(transform.position);
+        transform.position = Reset(transform.position);
     }
 
     // Update is called once per frame
@@ -52,7 +62,7 @@ public class FreeCamera : MonoBehaviour
 
         // reset the camera postion when the terrian is re-generated
         if (Input.GetKeyUp(KeyCode.Space)) {
-            pos = reset(pos);
+            pos = Reset(pos);
         }
 
         if (looking)

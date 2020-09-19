@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class DiamondSquareTerrain : MonoBehaviour
 {
-    public int mDivisions;
-    public float mSize;
-    public float mHeight;
+    public int mDivisions = 128;
+    public float mSize = 500;
+    public float mHeight = 100;
 
     public Shader shader;
     public Texture texture;
@@ -70,7 +70,7 @@ public class DiamondSquareTerrain : MonoBehaviour
         mVerts[0].y = Random.Range((float)(-height * 0.5), height);
         mVerts[mDivisions].y = Random.Range((float)(-height * 0.5), height);
         mVerts[mVerts.Length - 1].y = Random.Range((float)(-height * 0.5), height);
-        mVerts[mVerts.Length - 1 - mDivisions].y = Random.Range((float)(-height * 0.8), height);
+        mVerts[mVerts.Length - 1 - mDivisions].y = Random.Range((float)(-height * 0.5), height);
 
         int iterations = (int)Mathf.Log(mDivisions, 2);
         int numSquares = 1;
@@ -94,12 +94,12 @@ public class DiamondSquareTerrain : MonoBehaviour
         for (int i = 0; i < mVertCount; i++) {
             // height with larger than 18
             // Snow
-            if (mVerts[i].y > mHeight * 0.9) {
+            if (mVerts[i].y > mHeight * 1) {
                 colors[i] = new Color32(255, 255, 255, 255);
             }
             // height with larger than 15 and lower than 18
             // Rocks
-            if (mVerts[i].y > mHeight * 0.55 & mVerts[i].y <= mHeight * 0.9)
+            if (mVerts[i].y > mHeight * 0.55 & mVerts[i].y <= mHeight * 1)
             {
                 colors[i] = new Color32(105, 105, 105, 255);
             }
