@@ -1,4 +1,4 @@
-#Project 1: Fractal-Landscape
+Project 1: Fractal-Landscape
 
 Group member: YIFAN CAI, HANG ZOU, ZEHONGLI
 
