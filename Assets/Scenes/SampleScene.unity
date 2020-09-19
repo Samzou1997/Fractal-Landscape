@@ -768,14 +768,14 @@ MonoBehaviour:
   mDivisions: 64
   mSize: 500
   octaves:
-  - speed: {x: 1, y: 1}
-    scale: {x: 10, y: 10}
+  - speed: {x: 0.5, y: 0.5}
+    scale: {x: 1, y: 1}
     height: 1
     alternate: 1
-  - speed: {x: 0, y: 15}
-    scale: {x: 1.31, y: 8.63}
+  - speed: {x: 1, y: 1}
+    scale: {x: 100, y: 100}
     height: 2
-    alternate: 0
+    alternate: 1
 --- !u!4 &1899312327
 Transform:
   m_ObjectHideFlags: 0
