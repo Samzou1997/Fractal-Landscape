@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652470d496954aa43999fcf3fa78dc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbitSpeed: 20
+  orbitSpeed: 10
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652470d496954aa43999fcf3fa78dc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbitSpeed: 20
+  orbitSpeed: 10
 --- !u!1 &1899312323
 GameObject:
   m_ObjectHideFlags: 0
