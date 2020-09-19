@@ -41,6 +41,7 @@ public class DiamondSquareTerrain : MonoBehaviour
         float divisionSize = mSize/mDivisions;
 
         Mesh mesh = new Mesh();
+        mesh.indexFormat = UnityEngine.Rendering.IndexFormat.UInt32;
         GetComponent<MeshFilter>().mesh = mesh;
 
         int triOffset = 0;
@@ -93,24 +94,24 @@ public class DiamondSquareTerrain : MonoBehaviour
         for (int i = 0; i < mVertCount; i++) {
             // height with larger than 18
             // Snow
-            if (mVerts[i].y > 36) {
+            if (mVerts[i].y > mHeight * 0.9) {
                 colors[i] = new Color32(255, 255, 255, 255);
             }
             // height with larger than 15 and lower than 18
             // Rocks
-            if (mVerts[i].y > 22 & mVerts[i].y <= 36)
+            if (mVerts[i].y > mHeight * 0.55 & mVerts[i].y <= mHeight * 0.9)
             {
                 colors[i] = new Color32(105, 105, 105, 255);
             }
             // height with larger than 0 and lower than 15
             // Forest
-            if (mVerts[i].y > 2 & mVerts[i].y <= 22)
+            if (mVerts[i].y > mHeight * 0.05 & mVerts[i].y <= mHeight * 0.55)
             {
                 colors[i] = new Color32(85, 107, 47, 255);
             }
             // height with lower than 0
             // Beach
-            if (mVerts[i].y <= 2)
+            if (mVerts[i].y <= mHeight * 0.05)
             {
                 colors[i] = new Color32(244, 164, 96, 255);
             }
@@ -125,7 +126,7 @@ public class DiamondSquareTerrain : MonoBehaviour
         mesh.RecalculateNormals();
 
         MeshRenderer renderer = this.gameObject.GetComponent<MeshRenderer>();
-        renderer.material.shader = this.shader;
+        /*renderer.material.shader = this.shader;*/
         /*renderer.material.mainTexture = texture;*/
 
         MeshCollider collider = this.gameObject.GetComponent<MeshCollider>();

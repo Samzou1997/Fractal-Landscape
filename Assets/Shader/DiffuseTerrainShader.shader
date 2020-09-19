@@ -2,7 +2,7 @@
 // Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
 // Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "Shantanu Bhadoria/Basic/5a Multiple Lights" {
+Shader "SAM/DiffuseTerrainShader" {
 	Properties{
 		_Color("Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_SpecColor("Specular Color", Color) = (1.0, 1.0, 1.0, 1.0)

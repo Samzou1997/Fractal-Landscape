@@ -159,7 +159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 2c1648b52f959df46a46920db921a706, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -200,10 +200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20627a3d41dbd3d47b1aef2eba9c5923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mDivisions: 128
-  mSize: 200
-  mHeight: 40
-  shader: {fileID: 4800000, guid: e8e6dcedf10ccc6428c595fa8881093b, type: 3}
+  mDivisions: 256
+  mSize: 500
+  mHeight: 120
+  shader: {fileID: 0}
   texture: {fileID: 0}
 --- !u!4 &48816041
 Transform:
@@ -262,14 +262,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Color: {r: 0.9622642, g: 0.9230211, b: 0.8306337, a: 1}
+  m_Intensity: 0.8
+  m_Range: 500
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -295,7 +295,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -320,9 +320,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -100, y: 1000, z: 0}
+  m_LocalPosition: {x: -1000, y: 1000, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1658413431}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -338,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652470d496954aa43999fcf3fa78dc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbitSpeed: 20
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +393,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 2000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -402,7 +404,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
+  m_TargetEye: 1
   m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
@@ -441,7 +443,7 @@ MonoBehaviour:
   freeLookSens: 2.5
   zoomSens: 10
   fastZoomSens: 50
-  mapLimit: {x: 90, y: 90}
+  mapLimit: {x: 240, y: 240}
 --- !u!135 &963194230
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -522,7 +524,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aef6d3f60e0c9df4a83a2fd006c7c320, type: 2}
+  - {fileID: 2100000, guid: 224ac6e7f3a98ca408fdda70b3b9d655, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -558,12 +560,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658413427}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -100, y: 1000, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 705507995}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1658413432
 MonoBehaviour:
@@ -572,11 +574,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658413427}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 652470d496954aa43999fcf3fa78dc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbitSpeed: 0
 --- !u!1 &1678969604
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,14 +609,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6179246, g: 0.7214547, b: 1, a: 1}
   m_Intensity: 0.6
-  m_Range: 10
-  m_SpotAngle: 30
+  m_Range: 200
+  m_SpotAngle: 96
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -639,7 +642,7 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
@@ -664,9 +667,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678969604}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -100, y: -1000, z: 0}
+  m_LocalPosition: {x: 1000, y: -1000, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2047519635}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
@@ -682,6 +686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 652470d496954aa43999fcf3fa78dc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbitSpeed: 20
 --- !u!1 &1899312323
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,7 +699,6 @@ GameObject:
   - component: {fileID: 1899312326}
   - component: {fileID: 1899312325}
   - component: {fileID: 1899312324}
-  - component: {fileID: 1899312328}
   m_Layer: 0
   m_Name: WaterSurface
   m_TagString: Untagged
@@ -762,10 +766,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mDivisions: 128
-  mSize: 200
-  mHeight: 2
-  shader: {fileID: 0}
-  texture: {fileID: 0}
+  mSize: 500
+  octaves:
+  - speed: {x: 1, y: 1}
+    scale: {x: 10, y: 10}
+    height: 1
+    alternate: 1
+  - speed: {x: 0, y: 15}
+    scale: {x: 1.31, y: 8.63}
+    height: 2
+    alternate: 0
 --- !u!4 &1899312327
 Transform:
   m_ObjectHideFlags: 0
@@ -780,19 +790,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1899312328
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899312323}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 200, y: 32.606003, z: 200}
-  m_Center: {x: 0, y: -13.803001, z: 0}
 --- !u!1 &2047519631
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +841,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 846fa8f96fa8efd43908835092b18ab7, type: 2}
+  - {fileID: 2100000, guid: 153f88ed1827f584faa46c44ed63a418, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -880,12 +877,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047519631}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -100, y: -1000, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 80, y: 80, z: 80}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1678969606}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &2047519636
 MonoBehaviour:
@@ -894,8 +891,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047519631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 652470d496954aa43999fcf3fa78dc99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbitSpeed: 0

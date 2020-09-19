@@ -17,7 +17,7 @@ public class FreeCamera : MonoBehaviour
     public Vector3 reset(Vector3 point)
     {
         point.x = 0.0f;
-        point.y = 80.0f;
+        point.y = 150.0f;
         point.z = 0.0f;
         return point;
     }
@@ -72,7 +72,7 @@ public class FreeCamera : MonoBehaviour
         
         pos.x = Mathf.Clamp(pos.x, -mapLimit.x, mapLimit.x);
         pos.z = Mathf.Clamp(pos.z, -mapLimit.y, mapLimit.y);
-        pos.y = Mathf.Clamp(pos.y, 0, mapLimit.y * 2);
+        pos.y = Mathf.Clamp(pos.y, 2, mapLimit.y * 2);
         transform.position = pos;
         
         StartLooking();
